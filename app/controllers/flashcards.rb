@@ -1,6 +1,5 @@
 get '/flashcards/?' do 
-# display decks, 
-  session[:user_id] = 1 #placeholder until we implement login
+
   erb :flashcards
 end
 
@@ -48,4 +47,22 @@ get '/flashcards/deck/:id' do
   session[:card_ids] = Deck.find(session[:deck_id]).cards.shuffle.map(&:id)
   session[:round_id] = Round.where(:user_id => session[:user_id], :deck_id => session[:deck_id]).first.id
   redirect "/flashcards/deck/card"  
+end
+
+get '/logout/?' do
+  session.clear
+  redirect '/flashcards'
+end
+
+post '/login' do
+  if @user = User.authenticate(params)
+    session[:user_id] = @user.id
+    redirect "/flashcards"
+  end
+end
+
+post '/create' do
+  @user = User.create(:email => params[:email], :password => params[:password])
+  session[:user_id] = @user.id
+  redirect '/flashcards'
 end

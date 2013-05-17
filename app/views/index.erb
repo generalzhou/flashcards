@@ -2,21 +2,21 @@
   <h1>Welcome to Sinatra!</h1>
   <p>Hello, world!</p>
 
-  <% unless session[:user_id] %>
-<div class='login'>
-  <form action='/login' method='post'>
-    <input type='text' name='email' placeholder='E-mail'></input>
-    <input type='password' name='password' placeholder='Password'></input>
-    <input type='submit' value='Login'>
-  </form>
-</div>
-<br><br>
-<div class='create'>
-  <form action='/user/create' method='post'>
-    <input type='text' name='email' placeholder='E-mail'></input>
-    <input type='password' name='password' placeholder='Password'></input>
-    <input type='submit' value='Create'>
-  </form>
-</div>
+<% unless session[:user_id] %>
+  <div class='login'>
+    <form action='/login' method='post'>
+      <input type='text' name='email' placeholder='E-mail'></input>
+      <input type='password' name='password' placeholder='Password'></input>
+      <input type='submit' value='Login'>
+    </form>
+  </div>
+  <br><br>
+  <div class='create'>
+    <form action='/user/create' method='post'>
+      <input type='text' name='email' placeholder='E-mail'></input>
+      <input type='password' name='password' placeholder='Password'></input>
+      <input type='submit' value='Create'>
+    </form>
+  </div>
 <% end %>
 </div>
