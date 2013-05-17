@@ -116,6 +116,13 @@ namespace :db do
   task :version do
     puts "Current version: #{ActiveRecord::Migrator.current_version}"
   end
+
+  desc "psql console"
+  task :console do
+    exec "psql -d #{DB_NAME}"
+  end
+
+
 end
 
 desc 'Start IRB with application environment loaded'
