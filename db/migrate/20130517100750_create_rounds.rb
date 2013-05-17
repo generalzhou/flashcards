@@ -4,7 +4,6 @@ class CreateRounds < ActiveRecord::Migration
 
       t.references :deck
       t.references :user
-      t.integer :num_correct
       t.timestamps
 
     end

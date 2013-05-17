@@ -9,10 +9,11 @@ class User < ActiveRecord::Base
       # t.timestamps
   has_many :rounds
   has_many :decks, :through => :rounds
+  has_many :attempts, :through => :rounds
 
-  validates :user_name, :presence => true, :uniqueness
+  # validates :user_name, :presence => true, :uniqueness => true
 
-  validates :email, :presence => true
+  # validates :email, :presence => true
 
 
 

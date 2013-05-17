@@ -1,0 +1,12 @@
+<h4><%= session[:last_card_status] || "" %></h4>
+
+
+<h3 class='show_card'><%= current_card.question %></h3>
+
+
+<form class="show_card" action="/flashcards/deck/card/" method="post">
+  <input type="hidden" name="current_card_id" value="<%= current_card.id %>">
+  <input type="text" name="guess">
+  <input type="submit" value="submit">
+</form>
+
