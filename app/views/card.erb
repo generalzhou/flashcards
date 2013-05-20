@@ -1,3 +1,4 @@
+<div class="container">
 <h4><%= session[:last_card_status] || "" %></h4>
 
 
@@ -9,4 +10,9 @@
   <input type="text" name="guess">
   <input type="submit" value="submit">
 </form>
+<div class="hint">
+	<button>Hint</button>
+	<p style="display: none"><%=current_card.answer[0..1]%></p>
+	</div>
+</div>
 

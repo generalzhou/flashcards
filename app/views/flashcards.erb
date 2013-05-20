@@ -1,27 +1,4 @@
-<% unless session[:user_id] %>
-
-<div class='login'>
-  <form action='/login' method='post'>
-    <input type='text' name='email' placeholder='E-mail'></input>
-    <input type='password' name='password' placeholder='Password'></input>
-    <input type='submit' value='Login'>
-  </form>
-</div>
-<br><br>
-<div class='create'>
-  <form action='/create' method='post'>
-    <input type='text' name='email' placeholder='E-mail'></input>
-    <input type='password' name='password' placeholder='Password'></input>
-    <input type='submit' value='Create'>
-  </form>
-</div>
-<% else %>
-  <a href="/logout">Logout</a>
-<% end %>
-</div>
-
-
-<ul>
+<ul class="decks">
 <% Deck.all.each do |deck| %>
 <li><a href = "/flashcards/deck/<%=deck.id%>"><%= deck.name %></a></li>
 <% end %>
