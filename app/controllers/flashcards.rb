@@ -47,7 +47,7 @@ get '/flashcards/deck/:id' do
   session[:last_card_status] = nil
   session[:deck_id] = params[:id]
   deck = Deck.find(session[:deck_id])
-  if session[:user_id] == nil #this needs to change it jsut redirects if no user!
+  if session[:user_id] == nil #this needs to change it jsut redirects if no user! Let em play with decks too!
     redirect '/no_user'
   else
   deck.users << User.find(session[:user_id]) 

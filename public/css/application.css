@@ -122,6 +122,18 @@ ul.decks{
 	color:white;
 }
 
+button{
+	background-color:black;
+	color: white;
+	margin-top: 5px;
+	margin-left:46%;
+	text-align: center;
+}
+
+.hint p{
+	margin-top: 5px;
+	text-align: center;
+}
 footer{
 	background: #191e2b; /* Old browsers */
 	background: -moz-linear-gradient(top, #191e2b 0%, #191e2b 9%, #656668 99%); /* FF3.6+ */
