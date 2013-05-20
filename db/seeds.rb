@@ -1,3 +1,5 @@
+
+
 def load(file_name)
   all_rows = []
   File.open(file_name).each_line do |line|

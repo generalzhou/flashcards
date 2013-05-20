@@ -118,8 +118,18 @@ nav ul li a:hover{
 }
 
 ul.decks{
+	list-style: none;
+	font-size: 25px;
 	margin-top: 200px;
 	color:white;
+}
+
+ul a{
+		text-decoration: none;
+}
+
+ul.decks a:visited{
+	color:red;
 }
 
 button{
