@@ -32,8 +32,7 @@ require 'uri'
 
 	def display_page_info(response)
 		doc = Nokogiri::HTML(response.body)
-		 "Title: #{@webpage.title(doc)}"
-		 "Content: #{@webpage.links(doc)}"
+			@webpage.links(doc)
 	end
 
 class Page
@@ -48,7 +47,7 @@ class Page
 	end
 
 	def links(doc)
-		doc.search('p.class')
+		doc.search('p.class a').map {|links| "http://www.ruby-doc.org/core-1.9.3/"+ links['href'] }
 	end
 	
 	def title(doc)

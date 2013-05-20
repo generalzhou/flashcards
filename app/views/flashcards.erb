@@ -2,5 +2,8 @@
 <% Deck.all.each do |deck| %>
 <li><a href = "/flashcards/deck/<%=deck.id%>"><%= deck.name %></a></li>
 <% end %>
-<%= get_decks %>
+<% get_decks.each do |links| %>
+<li><a href="<%=links%>"><%= links %></a></li>
+<%end%>
+<li><a href="<%= get_decks %>"><%= get_decks %></a></li>
 </ul>
