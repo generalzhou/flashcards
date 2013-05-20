@@ -72,6 +72,15 @@ header h1{
 	padding:20px;
 	font-size: 30px;
 }
+
+header h1 a{
+	text-decoration: none;
+}
+
+header h1 a:visited{
+	color:white;
+	text-decoration: none;
+}
 header nav{
 float:left;
 width:800px;

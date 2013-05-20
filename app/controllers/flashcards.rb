@@ -39,12 +39,16 @@ get '/flashcards/deck/start_over/?' do
   erb :end, :locals => {:correct => correct, :incorrect => incorrect }
 end
 
+get "/no_user" do
+  erb :no_user
+  end
+
 get '/flashcards/deck/:id' do
   session[:last_card_status] = nil
   session[:deck_id] = params[:id]
   deck = Deck.find(session[:deck_id])
   if session[:user_id] == nil #this needs to change it jsut redirects if no user!
-    redirect '/'
+    redirect '/no_user'
   else
   deck.users << User.find(session[:user_id]) 
   session[:card_ids] = Deck.find(session[:deck_id]).cards.shuffle.map(&:id)
